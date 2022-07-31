@@ -56,12 +56,12 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
     --set controller.service.loadBalancerIP="REPLACE_STATIC_IP" 
 
 # Replace Static IP captured in Step-02 (without beta for NodeSelectors)
-helm install ingress-nginx ingress-nginx/ingress-nginx \
-    --namespace ingress-basic \
-    --set controller.replicaCount=2 \
-    --set controller.nodeSelector."kubernetes\.io/os"=linux \
-    --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux \
-    --set controller.service.externalTrafficPolicy=Local \
+helm install ingress-nginx ingress-nginx/ingress-nginx `
+    --namespace ingress-basic `
+    --set controller.replicaCount=2 `
+    --set controller.nodeSelector."kubernetes\.io/os"=linux `
+    --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux `
+    --set controller.service.externalTrafficPolicy=Local `
     --set controller.service.loadBalancerIP="52.154.156.139"     
 
 
